@@ -13,3 +13,7 @@ img{
 .active{
   display: block;
 }
+
+.blue{
+  color: blue;
+}
