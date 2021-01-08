@@ -1,12 +1,5 @@
 $(document).ready(function(){
 
-  // al click sulla classe dx assegna la classe active al primo figlio
-  // $('.dx').click(function(){
-  //   $('.immagini img:first-child').addClass('active');
-  // });
-
-    // in questo modo prendo come riferimento l'img che ha già la classe active
-
   $('.dx').click(function(){
     var immagineVisualizzata = $('img.active');
     var pallinoblu = $('i.blue');
@@ -18,7 +11,6 @@ $(document).ready(function(){
     if (pallinoblu.hasClass('last')){
       $('i.first').addClass('blue');
     }
-
   });
 
 
@@ -59,16 +51,22 @@ $(document).ready(function(){
       if (pallinoblu.hasClass('first')){
         $('i.last').addClass('blue');
       }
-
     }
   });
 
 
-
-
-
-
-
-
+  $('.row:last-child i').click(function(){
+    // alert($(this).index());
+    var indice = $(this).index();
+    // console.log(indice);
+    var pallinoblu = $('i.blue');
+    var immagineVisualizzata = $('img.active');
+    immagineVisualizzata.find('active');
+    immagineVisualizzata.removeClass('active');
+    $('.immagini img').eq(indice).addClass('active');
+    pallinoblu.find('blue');
+    pallinoblu.removeClass('blue');
+    $('.row:last-child i').eq(indice).addClass('blue');
+  })
 });
 
